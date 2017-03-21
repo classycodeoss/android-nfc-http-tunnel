@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">NFC HTTP Tunnel</string>
+
+    <string name="error_nfc_disabled_title">NFC Disabled</string>
+    <string name="error_nfc_disabled_message">Go to System Settings to enable NFC to use this app.</string>
+
+    <string name="menu_set_url">Set URL</string>
+    <string name="set_url_hint">http://host/path</string>
+
+    <string name="tunnel_service_name">HTTP Tunnel Service</string>
+    <string name="tunnel_description">HTTP Tunnel</string>
+    <string name="tunnel_status_ready">Ready to receive data</string>
+    <string name="tunnel_status_request_sent">HTTP request sent</string>
+    <string name="tunnel_status_progress">Transfer in progress (%1$d/%2$d received)</string>
+    <string name="tunnel_status_data_received">Data received (%1$.1f KB @ %2$.1f KB/sec)</string>
+    <string name="tunnel_status_link_established">NFC link established</string>
+    <string name="tunnel_status_link_deactivated">NFC link deactivated</string>
+</resources>
