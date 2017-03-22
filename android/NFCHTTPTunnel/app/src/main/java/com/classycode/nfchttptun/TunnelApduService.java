@@ -1,9 +1,7 @@
 package com.classycode.nfchttptun;
 
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.nfc.cardemulation.HostApduService;
 import android.os.Bundle;
 import android.os.Vibrator;
@@ -21,8 +19,6 @@ import java.util.Arrays;
  * @author Alex Suzuki, Classy Code GmbH, 2017
  */
 public class TunnelApduService extends HostApduService {
-
-    public static final String BROADCAST_INTENT_SET_URL = "SET_URL";
 
     public static final String BROADCAST_INTENT_LINK_ESTABLISHED = "LINK_ESTABLISHED";
     public static final String BROADCAST_INTENT_PROGRESS_UPDATED = "PROGRESS_UPDATED";
@@ -68,27 +64,12 @@ public class TunnelApduService extends HostApduService {
     private int nextSeqNo;
     private ByteArrayOutputStream buffer;
     private String url;
-
-    private BroadcastReceiver setUrlReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            url = intent.getStringExtra("url");
-            Log.i(TAG, "Using url: " + url);
-        }
-    };
-
+    
     @Override
     public void onCreate() {
         super.onCreate();
 
         isProcessing = false;
-        LocalBroadcastManager.getInstance(this).registerReceiver(setUrlReceiver, new IntentFilter(BROADCAST_INTENT_SET_URL));
-    }
-
-    @Override
-    public void onDestroy() {
-        LocalBroadcastManager.getInstance(this).unregisterReceiver(setUrlReceiver);
-        super.onDestroy();
     }
 
     private byte[] getUrlBytes() {
