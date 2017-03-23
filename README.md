@@ -1,6 +1,8 @@
 # android-nfc-http-tunnel
 
-Sample code for blog post. Contains the following:
+Sample code for blog post https://blog.classycode.com/tunneling-http-over-nfc-on-android-using-host-card-emulation-907947a721ac#.uw8iovncn.
+
+Contains the following:
 
 - Android app that uses Host Card Emulation (NFC) to communicate with an NFC terminal
 - libnfc-based terminal interfacing with a PN532 reader connected to a RaspberryPi via SPI
